@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT TASK 05</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #97cf85;
+  }
+  #container {
+    text-align: center;
+  }
+  #result {
+    margin-top: 20px;
+  }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Personality details:</h2>
+        <input type="text" id="nameInput" placeholder="Enter name" fdprocessedid="5mk51">
+        <button onclick="getDetails()" fdprocessid="0lmdf">GET DETAILS</button>
+        <div id="result">
+        </div>
+        <script>
+            var data =[
+  {
+    "name": "Alice",
+    "age": 25,
+    "place": "New York",
+    "dob": "1998-03-12"
+  },
+  {
+    "name": "Bob",
+    "age": 32,
+    "place": "Los Angeles",
+    "dob": "1991-07-19"
+  },
+  {
+    "name": "Charlie",
+    "age": 41,
+    "place": "Chicago",
+    "dob": "1982-11-03"
+  },
+  {
+    "name": "David",
+    "age": 18,
+    "place": "Houston",
+    "dob": "2005-05-08"
+  },
+  {
+    "name": "Emily",
+    "age": 29,
+    "place": "San Francisco",
+    "dob": "1994-09-26"
+  },
+  {
+    "name": "Frank",
+    "age": 36,
+    "place": "Boston",
+    "dob": "1987-12-30"
+  },
+  {
+    "name": "Grace",
+    "age": 22,
+    "place": "Miami",
+    "dob": "2001-01-14"
+  },
+  {
+    "name": "Harry",
+    "age": 47,
+    "place": "Seattle",
+    "dob": "1976-06-21"
+  }
+];
+
+function getDetails(){
+    var nameInput=document.getElementById("nameInput").value;
+    var resultDiv=document.getElementById("result");
+    var details=data.find(person=>person.name.toLowerCase()
+    === nameInput.toLowerCase());
+
+        if(details){
+           resultDiv.innerHTML=`
+           <h3>Details of ${details.name}:</h3>
+           <p>Age:${details.age}</p>
+           <p>Place:${details.place}</p>
+           <p>Date of Birth:${details.dob}</p>
+           `;
+        } else {
+            resultDiv.innerHTML="Person not found";
+        }
+        
+
+}
+
+</script>
+</body>
+</html>
